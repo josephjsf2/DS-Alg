@@ -1,3 +1,5 @@
+package com.joseph;
+
 public class App {
     public static void main(String[] args) {
         Tree<String> tree = new AvlTree<>();

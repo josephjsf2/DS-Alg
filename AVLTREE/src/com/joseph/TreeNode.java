@@ -1,3 +1,5 @@
+package com.joseph;
+
 public class TreeNode<T extends Comparable<T>> {
 
     private TreeNode leftNode;

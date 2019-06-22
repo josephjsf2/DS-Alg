@@ -1,3 +1,5 @@
+package com.joseph;
+
 public class AvlTree<T extends Comparable<T>> implements Tree<T>{
 
     private TreeNode<T> root;
