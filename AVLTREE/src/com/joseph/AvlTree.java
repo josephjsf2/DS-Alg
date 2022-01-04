@@ -123,7 +123,8 @@ public class AvlTree<T extends Comparable<T>> implements Tree<T>{
 
         int bf = getBalanceFactor(node);
         if(bf >1){
-            if(node.getLeftNode()!=null && node.getLeftNode().getLeftNode() !=null){
+          	// 檢查左側還是右側的樹看哪邊比較重，右邊比較重，則為LR，左邊比較重則是LL
+            if( getBalanceFactor(node.getLeftNode())== 1 ){
                 // LL type
                 return rightRotation(node);
             }else {
@@ -132,7 +133,8 @@ public class AvlTree<T extends Comparable<T>> implements Tree<T>{
                 return rightRotation(node);
             }
         }else if(bf < -1){
-            if(node.getRightNode()!=null && node.getRightNode().getRightNode() !=null){
+            // 檢查左側還是右側的樹看哪邊比較重，右邊比較重，則為RR，左邊比較重則是RL
+            if(getBalanceFactor(node.getRightNode()) == -1 ){
                 // RR type
                 return leftRotation(node);
             }else{
